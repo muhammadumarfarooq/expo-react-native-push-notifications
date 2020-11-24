@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import SendLocalNotifications from './components/1_Sending_Local_Notifications';
 import ControllingNotificationsDisplay from './components/2_Controlling_How_Notifications_are_displayed';
 import ReactingToForegroundNotifications from './components/3_Reacting_to_Foreground_Notifications';
+import ReactingToBackgroundNotifications from './components/4_Reacting_to_Background_Notifications';
 
 export default function App() {
   return (
@@ -11,7 +12,8 @@ export default function App() {
       <StatusBar style="auto" />
       {/* <SendLocalNotifications /> */}
       {/* <ControllingNotificationsDisplay /> */}
-      <ReactingToForegroundNotifications />
+      {/* <ReactingToForegroundNotifications /> */}
+      <ReactingToBackgroundNotifications />
     </View>
   );
 }
