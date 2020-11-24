@@ -3,13 +3,15 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import SendLocalNotifications from './components/1_Sending_Local_Notifications';
 import ControllingNotificationsDisplay from './components/2_Controlling_How_Notifications_are_displayed';
+import ReactingToForegroundNotifications from './components/3_Reacting_to_Foreground_Notifications';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
       {/* <SendLocalNotifications /> */}
-      <ControllingNotificationsDisplay />
+      {/* <ControllingNotificationsDisplay /> */}
+      <ReactingToForegroundNotifications />
     </View>
   );
 }
