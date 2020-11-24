@@ -1,8 +1,17 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 import * as Notifications from 'expo-notifications';
-//Only show notification when the app is running in the background
-const SendLocalNotifications = () => {
+
+// Show notifications in both background or foreground
+Notifications.setNotificationHandler({
+    handleNotification: async () => {
+        return {
+            shouldShowAlert: true
+        };
+    }
+})
+
+const ControllingNotificationsDisplay = () => {
     const handButtonPress = () => {
         Notifications.scheduleNotificationAsync({
             content: {
@@ -10,17 +19,17 @@ const SendLocalNotifications = () => {
                 body: "This is the body of the first notification"
             },
             trigger: {
-                seconds: 10
+                seconds: 5
             }
         })
     }
 
     return (
         <View>
-            <Text>1. Sending Local Notifications</Text>
+            <Text>2. Controlling Notifications Display</Text>
             <Button onPress={handButtonPress} title="Trigger Local Notifications" />
         </View>
     );
 };
 
-export default SendLocalNotifications;
+export default ControllingNotificationsDisplay;
