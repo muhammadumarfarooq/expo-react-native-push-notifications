@@ -5,14 +5,25 @@ import * as Permissions from 'expo-permissions';
 const GettingPermissionForNotifications = () => {
     useEffect(() => {
         Permissions.getAsync(Permissions.NOTIFICATIONS)
-            .then(status => {
-                if (status !== "granted") {
+            .then(statusObj => {
+                if (statusObj.status !== "granted") {
                     return Permissions.askAsync(Permissions.NOTIFICATIONS);
                 }
-            }).then(status => {
-                if (status !== "granted") {
-                    return;
+                return statusObj;
+            }).then(statusObj => {
+                if (statusObj.status !== "granted") {
+                    throw new Error("Permission not granted!");
                 }
+            })
+            .then(() => {
+                return Notifications.getExpoPushTokenAsync();
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch((err) => {
+                console.log(err);
+                return null;
             })
         //exlint-disable-next-line
     }, []);
