@@ -5,7 +5,8 @@ import SendLocalNotifications from './components/1_Sending_Local_Notifications';
 import ControllingNotificationsDisplay from './components/2_Controlling_How_Notifications_are_displayed';
 import ReactingToForegroundNotifications from './components/3_Reacting_to_Foreground_Notifications';
 import ReactingToBackgroundNotifications from './components/4_Reacting_to_Background_Notifications';
-import SendingaPushNotification from './components/6.Sending_a_push_Notification';
+import SendingaPushNotification from './components/6.Sending_a_push_Notification_using_expo_server_manually';
+import SendingPushNotificationsFromApp from './components/7_Sending_a_Push_Notification_expo_server_from_the_app';
 
 export default function App() {
   return (
@@ -15,7 +16,8 @@ export default function App() {
       {/* <ControllingNotificationsDisplay /> */}
       {/* <ReactingToForegroundNotifications /> */}
       {/* <ReactingToBackgroundNotifications /> */}
-      <SendingaPushNotification />
+      {/* <SendingaPushNotification /> */}
+      <SendingPushNotificationsFromApp />
     </View>
   );
 }
